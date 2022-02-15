@@ -9,6 +9,13 @@ ENDPOINTS = {
 }
 
 def get_data_from_cli():
+    """
+    This fn reads data from user input and apply some modifications.
+    
+    @return
+        data: dict of passenger details
+    """
+    
     data = {
         "passengerId": int(input("Enter Passenger ID: ")),
         "pClass": int(input("Enter Passenger Class: ")),
@@ -39,6 +46,10 @@ def get_data_from_cli():
 
 
 def getInfo():
+    """
+    Calls the /getInfo API to get the survival status of the passenger.
+    """
+
     api = HOST_URL + ENDPOINTS["GET_INFO"]
     data = get_data_from_cli()
     arr = list()
@@ -58,6 +69,10 @@ def getInfo():
 
 
 def main():
+    """
+    main method of the application.
+    """
+
     while True:
         getInfo()
         if(input("press q/Q to quit: ").lower() == "q"):

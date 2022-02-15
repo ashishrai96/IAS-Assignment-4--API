@@ -7,6 +7,11 @@ app = Flask(__name__)
 
 @app.route("/getInfo", methods=["POST"])
 def getInfo():
+    """
+    This fn predicts the survival of the passenger 
+    using the preprocessed model.pkl file
+    """
+    
     req_body = request.get_json()
     X_test = np.array([req_body['data']])
 
