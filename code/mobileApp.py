@@ -17,17 +17,17 @@ def get_data_from_cli():
     """
     
     data = {
-        "passengerId": int(input("Enter Passenger ID: ")),
-        "pClass": int(input("Enter Passenger Class: ")),
+        "passengerId": int(input("Enter Passenger ID: ") or "000"),
+        "pClass": int(input("Enter Passenger Class: ") or "3"),
         "name": input("Enter Passenger Name: "),
-        "sex": input("Enter Passenger Gender (male/female): "),
-        "age": float(input("Enter Passenger Age: ")),
-        "sidSp": int(input("Enter Passenger Siblings: ")),
-        "parch": int(input("Enter Passenger Parents: ")),
+        "sex": input("Enter Passenger Gender (male/female): ") or "male",
+        "age": float(input("Enter Passenger Age: ") or "28"),
+        "sidSp": int(input("Enter Passenger Siblings: ") or "0"),
+        "parch": int(input("Enter Passenger Parents: ") or "0"),
         "ticket": input("Enter Passenger Ticket No.: "),
-        "fare": float(input("Enter Ticket Fare: ")),
+        "fare": float(input("Enter Ticket Fare: ") or "8"),
         "cabin": input("Enter Passenger Cabin: "),
-        "embarked": input("Enter Embarked (S/C/Q): ")
+        "embarked": input("Enter Embarked (S/C/Q): ") or "S"
     }
 
     if(data["sex"]=="male"):
