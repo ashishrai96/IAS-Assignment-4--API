@@ -9,7 +9,12 @@ app = Flask(__name__)
 def getInfo():
     """
     This fn predicts the survival of the passenger 
-    using the preprocessed model.pkl file
+    using the preprocessed model.pkl file.
+
+    Expected Request body:
+        {
+            "data": []
+        }
     """
     
     req_body = request.get_json()
